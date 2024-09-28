@@ -2,8 +2,8 @@
 session_start();
 
 // Obtener el correo y la contraseña ingresados por el usuario
-$correoIngresado = $_POST['correo'];
-$passwordIngresada = $_POST['password'];
+$correoIngresado = trim($_POST['correo']);
+$passwordIngresada = trim($_POST['password']);
 
 // Leer el archivo de correos y contraseñas
 $usuariosPermitidos = file('data/correos.txt', FILE_IGNORE_NEW_LINES);
@@ -11,6 +11,10 @@ $usuariosPermitidos = file('data/correos.txt', FILE_IGNORE_NEW_LINES);
 $accesoConcedido = false;
 
 foreach ($usuariosPermitidos as $usuario) {
+    // Asegurarse de eliminar espacios en blanco de cada línea
+    $usuario = trim($usuario);
+    
+    // Dividir por el separador ';' para obtener el correo y el hash de la contraseña
     list($correo, $hash) = explode(';', $usuario);
     
     // Verificar si el correo coincide y si la contraseña es correcta usando password_verify()
