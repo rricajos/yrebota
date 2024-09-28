@@ -7,8 +7,8 @@
 <body>
     <h1>Iniciar sesión</h1>
     <form action="auth.php" method="post">
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
+        <label for="correo">Usuario:</label>
+        <input type="text" id="correo" name="correo" required>
         <br>
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" required>
