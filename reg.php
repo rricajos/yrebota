@@ -11,3 +11,4 @@ file_put_contents('data/correos.txt', "correo3@example.com;$password3\n", FILE_A
 file_put_contents('data/correos.txt', "correo4@example.com;$password4\n", FILE_APPEND);
 
 echo "Contraseñas generadas y guardadas en correos.txt";
+?>
