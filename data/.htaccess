@@ -1,4 +1,4 @@
-<!-- <Files *.txt>
+<Files *.txt>
     Order allow,deny
     Deny from all
-</Files> -->
+</Files>

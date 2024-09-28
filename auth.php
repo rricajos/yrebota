@@ -1,9 +1,11 @@
 <?php
 session_start();
 
-// Leer el archivo de correos y contraseñas
+// Obtener el correo y la contraseña ingresados por el usuario
 $correoIngresado = $_POST['correo'];
 $passwordIngresada = $_POST['password'];
+
+// Leer el archivo de correos y contraseñas
 $usuariosPermitidos = file('data/correos.txt', FILE_IGNORE_NEW_LINES);
 
 $accesoConcedido = false;
@@ -19,7 +21,7 @@ foreach ($usuariosPermitidos as $usuario) {
 }
 
 if ($accesoConcedido) {
-    $_SESSION['correo'] = $correoIngresado; // Guardar la sesión con el correo
+    $_SESSION['correo'] = $correoIngresado; // Guardar la sesión
     header('Location: submit.php'); // Redirigir a la página de propuestas
     exit();
 } else {
