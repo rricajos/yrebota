@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $entradas = file('data/entradas.txt', FILE_IGNORE_NEW_LINES);
         foreach ($entradas as $linea) {
             list($id, $entrada, $votos) = explode(';', $linea);
-            echo "<li>$entrada (Votos: $votos) <a href='vote.php?id=$id'>Votar</a></li>";
+            echo "<li>$entrada (Votos: $votos) <a href='vote.php?id=$id'>Votar</a> <a href='vvote.php?id=$id'>Votar en contra</a></li>";
         }
         ?>
     </ul>
